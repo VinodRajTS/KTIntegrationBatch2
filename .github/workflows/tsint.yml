@@ -6,7 +6,7 @@ name: 'On Changes to Github-actions'
 on: 
   push:
     branches:
-      - 'dev'
+      - 'main'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -31,6 +31,6 @@ jobs:
           echo test, and deploy your project.
       - name: Run Testsigma Automation Suites
         run: |
-          cd ${{ github.workspace }}/testsigma
-          chmod a+x run_smoke_tests.sh
-          ./run_smoke_tests.sh
+          cd ${{ github.workspace }}
+          chmod a+x integration.sh
+          ./integration.sh
